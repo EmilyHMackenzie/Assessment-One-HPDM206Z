@@ -15,6 +15,14 @@ The hospital database consists of four main entities:
 
 Relationships between these entities are defined using primary keys and foreign keys and are illustrated in the Entity Relationship Diagram (ERD).
 
+## Design Rationale
+
+Although the assessment forum clarified that a combined table for doctors and patients was expected, this implementation uses separate tables for these entities. 
+
+This design choice reflects standard relational database modelling principles, where doctors and patients represent distinct roles with different relationships and responsibilities. Separating them improves clarity, avoids unnecessary NULL values, and supports cleaner one-to-many relationships (e.g., one doctor to many patients).
+
+All required relationships and queries function as specified in the assessment brief.
+
 ## Entity Relationship Diagram (ERD)
 The ERD illustrates the structure of the database and the relationships between entities.
 <img width="2320" height="840" alt="ERD Assessment One (1)" src="https://github.com/user-attachments/assets/fe21e8e4-668d-42ba-a12d-d4fc1983e1fb" />
@@ -57,3 +65,4 @@ These queries are written to support common analytical and administrative tasks 
 - MySQL
 - Ubuntu (Linux)
 - Git and GitHub
+- OpenStack
