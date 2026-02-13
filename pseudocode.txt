@@ -1,0 +1,124 @@
+Database and Query Planning Pseudocode
+
+Part One – Database Design Planning
+
+BEGIN
+
+Create database hospital_database
+
+Create table hospitals
+    Define hospital_id as unique identifier
+    Define name
+    Define address
+    Define size
+    Define type
+    Define accreditation_status
+
+Create table doctors
+    Define person_id as unique identifier
+    Define name
+    Define date_of_birth
+    Define address
+    Define role
+    Define hospital_id as reference to hospitals
+
+Establish relationship:
+    hospital_id in doctors links to hospital_id in hospitals
+
+Create table patients
+    Define person_id as unique identifier
+    Define name
+    Define date_of_birth
+    Define address
+    Define role
+    Define doctor_id as reference to doctors
+
+Establish relationship:
+    doctor_id in patients links to person_id in doctors
+
+Create table prescriptions
+    Define prescription_id as unique identifier
+    Define patient_id as reference to patients
+    Define doctor_id as reference to doctors
+    Define medication
+    Define prescription_date
+
+Establish relationships:
+    patient_id links to patients
+    doctor_id links to doctors
+
+Load data from hospitals.csv into hospitals
+Load data from doctors.csv into doctors
+Load data from patients.csv into patients
+Load data from prescriptions.csv into prescriptions
+
+END
+
+------------------------------------------------------------
+Part Two – Query Planning
+------------------------------------------------------------
+
+BEGIN
+
+Query 1 – List all doctors at a given hospital
+    OUTPUT "Enter hospital_id"
+    SET hospital_id ← USERINPUT
+    INITIALISE empty result_set
+    FOR each doctor in doctors table
+        IF doctor.hospital_id equals hospital_id THEN
+            Add doctor to result_set
+        END IF
+    END FOR
+    OUTPUT result_set
+
+Query 2 – List all prescriptions for a given patient ordered by date
+    OUTPUT "Enter patient_id"
+    SET patient_id ← USERINPUT
+    INITIALISE empty result_set
+    FOR each prescription in prescriptions table
+        IF prescription.patient_id equals patient_id THEN
+            Add prescription to result_set
+        END IF
+    END FOR
+    Sort result_set by prescription_date in ascending order
+    OUTPUT result_set
+
+Query 3 – List all prescriptions written by a given doctor
+    OUTPUT "Enter doctor_id"
+    SET doctor_id ← USERINPUT
+    INITIALISE empty result_set
+    FOR each prescription in prescriptions table
+        IF prescription.doctor_id equals doctor_id THEN
+            Add prescription to result_set
+        END IF
+    END FOR
+    OUTPUT result_set
+
+Query 4 – Add a new patient
+    OUTPUT "Enter new patient details"
+    READ person_id, name, date_of_birth, address, role, doctor_id
+    IF doctor_id exists in doctors table THEN
+        Insert new patient into patients table
+        OUTPUT "Patient added successfully"
+    ELSE
+        OUTPUT "Error – doctor does not exist"
+    END IF
+
+Query 5 – Identify the doctor with the most prescriptions
+    Group prescriptions by doctor_id
+    Count number of prescriptions per doctor
+    Determine doctor_id with highest count
+    OUTPUT doctor_id
+
+Query 6 – List doctors at the hospital with the largest size
+    Determine hospital with maximum size
+    STORE hospital_id
+    INITIALISE empty result_set
+    FOR each doctor in doctors table
+        IF doctor.hospital_id equals hospital_id THEN
+            Add doctor to result_set
+        END IF
+    END FOR
+    OUTPUT result_set
+
+END
