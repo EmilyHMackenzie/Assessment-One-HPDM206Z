@@ -30,6 +30,13 @@ The ERD illustrates the structure of the database and the relationships between 
 - **FK** denotes a Foreign Key  
 - The ERD image is also included in this repository as a PNG file titled **`ERD Assessment One.png`**
 
+## Planning Documentation
+Prior to implementing the database, pseudocode was created to plan the structure of the tables, their fields, and the relationships between entities. The pseudocode also outlines the logical steps for each required SQL query.
+
+This planning process ensured clarity in database design and alignment with relational modelling principles before implementation in MySQL.
+
+The pseudocode file is included in this repository as `pseudocode.txt`
+
 ## Repository Contents
 This repository contains the following files:
 
@@ -37,6 +44,7 @@ This repository contains the following files:
 - `doctors.csv` – Raw doctor data
 - `patients.csv` – Raw patient data
 - `prescriptions.csv` – Raw prescription data
+- `pseudocode.txt` - Planning pseudocode for database design and query logic
 - `hospital_database_dump.sql` – MySQL database dump containing table definitions and imported data
 - `ERD Assessment One.png` – Entity Relationship Diagram for the database
 - `README.md` – Project documentation
