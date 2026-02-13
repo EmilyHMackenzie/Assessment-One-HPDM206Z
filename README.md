@@ -3,8 +3,6 @@
 ## Project Overview
 This project uses MySQL to create a relational hospital database that allows information on hospitals, doctors, patients, and prescriptions to be queried and analysed.
 
-The project was developed as part of Assessment 1 for HPDM206Z.
-
 ## Database Description
 The hospital database consists of four main entities:
 
