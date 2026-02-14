@@ -7,7 +7,7 @@ BEGIN
 Create database hospital_database
 
 Create table hospitals
-    Define hospital_id as unique identifier
+    Define hospital_id as Primary Key
     Define name
     Define address
     Define size
@@ -15,31 +15,31 @@ Create table hospitals
     Define accreditation_status
 
 Create table doctors
-    Define person_id as unique identifier
+    Define person_id as Primary Key
     Define name
     Define date_of_birth
     Define address
     Define role
-    Define hospital_id as reference to hospitals
+    Define hospital_id as Foreign Key referencing hospitals
 
 Establish relationship:
     hospital_id in doctors links to hospital_id in hospitals
 
 Create table patients
-    Define person_id as unique identifier
+    Define person_id as Primary Key
     Define name
     Define date_of_birth
     Define address
     Define role
-    Define doctor_id as reference to doctors
+    Define doctor_id as Foreign Key referencing doctors
 
 Establish relationship:
     doctor_id in patients links to person_id in doctors
 
 Create table prescriptions
-    Define prescription_id as unique identifier
-    Define patient_id as reference to patients
-    Define doctor_id as reference to doctors
+    Define prescription_id as Primary Key
+    Define patient_id as Foreign Key referencing patients
+    Define doctor_id as Foreign Key referencing doctors
     Define medication
     Define prescription_date
 
@@ -108,7 +108,8 @@ Query 5 – Identify the doctor with the most prescriptions
     Group prescriptions by doctor_id
     Count number of prescriptions per doctor
     Determine doctor_id with highest count
-    OUTPUT doctor_id
+    Retrieve corresponding doctor name
+    OUTPUT doctor_id and doctor name
 
 Query 6 – List doctors at the hospital with the largest size
     Determine hospital with maximum size
