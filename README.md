@@ -11,20 +11,13 @@ The hospital database consists of four main entities:
 - **Patients** – stores patient records, each assigned to a single doctor.
 - **Prescriptions** – stores prescriptions issued to patients by doctors.
 
-Relationships between these entities are implemented using primary and foreign key constraints and are illustrated in the Entity Relationship Diagram (ERD).
-
-## Design Rationale
-
-The database design follows relational modelling principles by separating hospitals, doctors, patients, and prescriptions into distinct tables.
-
-This structure avoids redundancy, supports clear one-to-many relationships (e.g., one doctor to many patients), and maintains referential integrity using primary and foreign keys.
+The database was designed using relational modelling principles. Each entity (Hospitals, Doctors, Patients, Prescriptions) was separated into distinct tables to reduce redundancy and maintain data integrity. Relationships between these entities are implemented using primary and foreign key constraints and are illustrated in the Entity Relationship Diagram (ERD).
 
 ## Entity Relationship Diagram (ERD)
 The ERD illustrates the structure of the database and the relationships between entities.
 <img width="2320" height="840" alt="ERD Assessment One (1)" src="https://github.com/user-attachments/assets/fe21e8e4-668d-42ba-a12d-d4fc1983e1fb" />
 - **PK** denotes a Primary Key  
 - **FK** denotes a Foreign Key  
-- Foreign key constraints were implemented to enforce referential integrity and ensure consistency between related tables.
 - The ERD image is also included in this repository as a PNG file titled **`Hospital_Database_ERD.png`**
 
 ## Planning Documentation
