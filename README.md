@@ -43,7 +43,7 @@ This repository contains the following files:
 - `prescriptions.csv` – Raw prescription data
 - `pseudocode.txt` – Planning pseudocode for database design and query logic
 - `hospital_database_dump.sql` – MySQL database dump containing table definitions and imported data
-- `ERD Assessment One.png` – Entity Relationship Diagram for the database
+- `Hospital_Database_ERD.png` – Entity Relationship Diagram for the database
 - `README.md` – Project documentation
 - `queries.sql` – SQL query scripts
 
@@ -89,15 +89,6 @@ The implemented queries are:
 
 - **Query 6 – List all doctors at the hospital with the largest size (number of beds)**  
   Uses a subquery with `MAX(size)` to identify the largest hospital and retrieves all doctors assigned to it.
-
-These queries demonstrate the use of:
-
-- `INNER JOIN`
-- `WHERE` filtering
-- `ORDER BY`
-- `GROUP BY`
-- Aggregate functions (`COUNT`, `MAX`)
-- `INSERT` statements
 
 ## Tools and Technologies
 - MySQL
